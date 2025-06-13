@@ -9,7 +9,7 @@ spec:
     - http:
         paths:
           - pathType: Prefix
-            path: /posgres-operator-ui
+            path: /postgres-operator-ui
             backend:
               service:
                 name: postgres-operator-ui
