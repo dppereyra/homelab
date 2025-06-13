@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: postgres-operator-charts
+  namespace: pgdb-operator
+spec:
+  releaseName: postgres-operator-charts
+  chart:
+    spec:
+      chart: postgres-operator-charts
+      version: 1.14.0
+      sourceRef:
+        kind: HelmRepository
+        name: postgres-operator-charts
+        namespace: flux-system
+      interval: 1m
+  interval: 5m
+  targetNamespace: pgdb-operator
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: postgres-operator-ui
+  namespace: pgdb-operator
+spec:
+  releaseName: postgres-operator-ui
+  chart:
+    spec:
+      chart: postgres-operator-ui
+      version: 1.14.0
+      sourceRef:
+        kind: HelmRepository
+        name: postgres-operator-ui-charts
+        namespace: flux-system
+      interval: 1m
+  interval: 5m
+  targetNamespace: pgdb-operator
