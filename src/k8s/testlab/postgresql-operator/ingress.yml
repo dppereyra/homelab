@@ -1,0 +1,17 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: postgres-operator-ui
+  namespace: pgdb-operator
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /posgres-operator-ui
+            backend:
+              service:
+                name: postgres-operator-ui
+                port:
+                  number: 8081
