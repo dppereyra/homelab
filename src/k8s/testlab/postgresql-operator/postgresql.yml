@@ -1,0 +1,23 @@
+---
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: pgdb
+  namespace: databases
+spec:
+  teamId: "testlab"
+  volume:
+    size: 5Gi
+  numberOfInstances: 2
+  users:
+    dbadmin:
+    - superuser
+    - createdb
+    keycloak: []
+    docmost: []
+  databases:
+    dbadmin: dbadmin
+    keycloak: keycloak
+    docmost: docmost
+  postgresql:
+    version: "17"
