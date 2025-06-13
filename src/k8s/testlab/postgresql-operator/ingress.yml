@@ -4,6 +4,8 @@ kind: Ingress
 metadata:
   name: postgres-operator-ui
   namespace: pgdb-operator
+  annotations:
+    traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - http:
