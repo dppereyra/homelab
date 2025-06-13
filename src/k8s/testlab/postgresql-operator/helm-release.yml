@@ -2,13 +2,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: postgres-operator-charts
+  name: postgres-operator
   namespace: pgdb-operator
 spec:
-  releaseName: postgres-operator-charts
+  releaseName: postgres-operator
   chart:
     spec:
-      chart: postgres-operator-charts
+      chart: postgres-operator
       version: 1.14.0
       sourceRef:
         kind: HelmRepository
