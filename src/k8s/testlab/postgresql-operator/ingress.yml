@@ -16,4 +16,4 @@ spec:
               service:
                 name: postgres-operator-ui
                 port:
-                  number: 8081
+                  number: 80
