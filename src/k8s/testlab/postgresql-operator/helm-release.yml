@@ -36,3 +36,7 @@ spec:
       interval: 1m
   interval: 5m
   targetNamespace: pgdb-operator
+  valuesFrom:
+    - kind: ConfigMap
+      name: postgresql-operator-ui-config-map
+      valuesKey: values.yaml

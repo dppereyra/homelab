@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgresql-operator-ui-config-map
+  namespace: pgdb-operator
+data:
+  service:
+    type: "ClusterIP"
+    port: "8081"
+  ingress:
+    enabled: "true"
+    ingressClassName: "traefik"
+    hosts:
+      - host: homesvc.local
+        paths: ["/postgres-operator-ui"]
