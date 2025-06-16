@@ -1,0 +1,17 @@
+apiVersion: "acid.zalan.do/v1"
+kind: PostgresTeam
+metadata:
+  name: team-memberships
+  namespace: pgdb-operator
+spec:
+  additionalTeams:
+    testlab:
+      - dbadmins
+      - applications
+    dbadmins:
+      - dppereyra
+    superadmins:
+      - dppereyra
+    applications:
+      - keycloak
+      - docmost

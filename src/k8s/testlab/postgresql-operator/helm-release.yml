@@ -17,6 +17,27 @@ spec:
       interval: 1m
   interval: 5m
   targetNamespace: pgdb-operator
+  values:
+    enableJsonLogging: true
+    configUsers:
+      enable_password_rotation: true
+      password_rotation_interval: 180
+    configKubernetes:
+      enable_cross_namespace_secret: true
+      enable_readiness_probe: true
+    configTeamsApi:
+      enable_teams_api: true
+      enable_postgres_team_crd: true
+      enable_postgres_team_crd_superusers: true
+      enable_team_superuser: true
+      pam_role_name: testlab
+      postgre_superuser_teams:
+        - superadmins
+      team_admin_role: dbadmins
+      protected_role_names:
+        - dbadmins
+        - applications
+        - superadmins
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
