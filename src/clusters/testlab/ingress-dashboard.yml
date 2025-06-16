@@ -27,7 +27,7 @@ metadata:
     spec.ingressClassName: traefik
 spec:
   rules:
-    - host: traefik.${DOMAIN}
+    - host: traefik.homesvc.local
       http:
         paths:
           - path: /
