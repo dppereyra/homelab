@@ -6,4 +6,3 @@ resources:
   - helm-repository.yml
   - helm-release.yml
   - postgresql.yml
-  - helm-release-config.yml
