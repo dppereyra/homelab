@@ -7,3 +7,4 @@ resources:
   - helm-release.yml
   - postgresql.yml
   - ingress.yml
+  - helm-release-config.yml
