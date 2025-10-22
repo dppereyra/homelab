@@ -1,0 +1,26 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: common
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./src/k8s/common
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: vps
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./src/k8s/vps
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
